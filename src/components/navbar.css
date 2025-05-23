@@ -1,0 +1,613 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video background - full screen */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Video overlay for better text contrast */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* Transparent header - overlays video */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+  padding: 0;
+}
+
+/* Navbar layout - transparent */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  color: white;
+  background: transparent;
+  min-height: 80px;
+  padding-left: 0; /* Add this line */
+}
+
+/* Logo section */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+   margin-right: auto; /* Add this line */
+  margin-left: 5%; /* Add this line */
+}
+
+.logo-image {
+  width: 250px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+  /* Force left alignment if still not working */
+.navbar {
+  padding-left: 0 !important;
+}
+
+.logo-title {
+  margin-left: 5% !important;
+  padding-left: 0 !important;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cr-number {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Menu button */
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+  transform: scale(1.1);
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.menu-button:hover .hamburger-line {
+  background-color: #FFD700;
+}
+
+/* Main content styling */
+.main-content {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 5%;
+  margin-top: 0;
+}
+
+.center-heading {
+  color: white;
+  max-width: 900px;
+  animation: fadeInUp 1s ease-out;
+  text-align: left;
+  margin: 0;  /* Add this line */
+  padding: 0;  /* Add this line */
+  width: 100;   /* Add this line */
+} 
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.company-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+  color: #FFD700;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin: 0;
+  color: white;
+  opacity: 0.9;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 300;
+}
+
+/* Image Section */
+.image-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Image overlay for better text contrast */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Content over image */
+.image-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 5%;
+  z-index: 2;
+}
+
+/* Company Introduction Section */
+.intro-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 100px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.intro-content {
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 50px;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #34495e;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.intro-text p {
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Fullscreen menu styles */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 101;
+  padding: 10px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFD700;
+  transform: rotate(90deg);
+}
+
+.menu-content {
+  text-align: center;
+  max-width: 400px;
+  animation: slideInUp 0.4s ease-out;
+}
+
+.menu-logo {
+  width: 160px;
+  height: 100px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.menu-content h2 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  color: white;
+  font-weight: bold;
+}
+
+.menu-content p {
+  font-size: 1rem;
+  margin: 5px 0 40px 0;
+  opacity: 0.8;
+}
+
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-width: 300px;
+}
+
+.menu-items li {
+  padding: 18px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  font-weight: 500;
+}
+
+.menu-items li:hover,
+.menu-items li:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFD700;
+  transform: translateX(10px);
+  border-left: 3px solid #FFD700;
+}
+
+.menu-items li:last-child {
+  border-bottom: none;
+}
+
+.menu-items li:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+
+/* Particle animation layer - over video/image, under text */
+.particle-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Behind text (z-index: 2), above background (z-index: -1 or 0) */
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* Delayed fade-in for hero and image section content */
+.fade-in-delayed {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 2.5s ease-out, transform 2.5s ease-out;
+}
+
+.fade-in-delayed.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 3%;
+    min-height: 70px;
+  }
+  
+  .main-content,
+  .image-content {
+    padding: 15px 3%;
+  }
+  
+  .welcome-text {
+    font-size: 2.2rem;
+  }
+  
+  .company-title {
+    font-size: 2.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .logo-image {
+    width: 200px;
+    height: 55px;
+  }
+  
+  .company-name {
+    font-size: 16px;
+  }
+  
+  .cr-number {
+    font-size: 13px;
+  }
+  
+  .menu-content {
+    max-width: 90%;
+  }
+  
+  .menu-items {
+    min-width: 250px;
+  }
+  
+  .menu-items li {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+  }
+  
+  .close-button {
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+  }
+  
+  .intro-section {
+    padding: 60px 0;
+  }
+  
+  .intro-container {
+    padding: 0 3%;
+  }
+  
+  .intro-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 2%;
+    min-height: 60px;
+  }
+  
+  .main-content,
+  .image-content {
+    padding: 10px 2%;
+  }
+  
+  .welcome-text {
+    font-size: 1.8rem;
+  }
+  
+  .company-title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .logo-image {
+    width: 150px;
+    height: 45px;
+  }
+  
+  .company-name {
+    font-size: 14px;
+  }
+  
+  .cr-number {
+    font-size: 12px;
+  }
+  
+  .hamburger-line {
+    width: 20px;
+    height: 2px;
+  }
+  
+  .intro-section {
+    padding: 40px 0;
+  }
+  
+  .intro-container {
+    padding: 0 2%;
+  }
+  
+  .intro-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+  
+  .intro-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.menu-button:focus,
+.close-button:focus,
+.menu-items li:focus {
+  outline: 2px solid #FFD700;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .video-overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .fullscreen-menu {
+    background: rgba(0, 0, 0, 0.98);
+  }
+  
+  .company-name,
+  .cr-number,
+  .welcome-text,
+  .subtitle {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+  }
+  
+  .intro-title {
+    color: #1a252f;
+  }
+  
+  .intro-text {
+    color: #2c3e50;
+  }
+}
